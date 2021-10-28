@@ -1,4 +1,17 @@
 extends ../layouts/base.pug
 
 block content
+
+    section.wholeWrapper
+        section.XX__left
+        section.rsWrapper rswrapper
+        section.XX__right
+
     h1 hello World
+
+    if loggedIn
+        h2 LOGIN
+    else 
+        h2 NOT LOGIN
+
+    
