@@ -191,19 +191,22 @@ a {
   flex-direction: row;
 }
 
-.signupFromBox .signupFromBox__l {
+.signupFromBox .signupFromBox__left {
   width: 30%;
   height: 100%;
 
   background-color: rgb(87, 87, 87);
 }
 
-.signupFromBox .signupFromBox__r {
+.signupFromBox .signupFromBox__right {
   width: 70%;
   height: 100%;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.signupfrombox__r .signupFromBox__r__input {
+.signupFromBox .signupFromBox__right .signupFromBox__right__input {
   margin: 10px 0px;
   width: 50%;
   height: 30px;
