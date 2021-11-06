@@ -56,4 +56,35 @@ router.get("/signin", checkLogin, (req, res, next) => {
   res.render("screens/signin", { loggedIn });
 });
 
+router.post("/signin", (req, res, next) => {
+  const selectQuery = `
+    SELECT  email,
+            password,
+            name,
+            mobile
+      FROM  users
+     WHERE  email = "${req.body.signinEmail}"
+       AND  password = "${req.body.signinPassword}"
+  `;
+
+  try {
+    db.query(selectQuery, (error, rows) => {
+      if (error) {
+        console.log(error);
+        return res.redirect("/signin");
+      }
+
+      if (rows.length === 0) {
+        return res.redirect("/signin");
+      }
+
+      req.session.isLoggedIn = true;
+      return res.redirect("/");
+    });
+  } catch (error) {
+    console.log(error);
+    return res.redirect("/signin");
+  }
+});
+
 module.exports = router;
