@@ -1,0 +1,33 @@
+.writeBtn {
+  display: block;
+
+  width: 120px;
+  height: 20px;
+
+  line-height: 20px;
+
+  text-align: center;
+
+  margin: 20px 10px;
+  background-color: royalblue;
+  color: #ffffff;
+  border-radius: 15px;
+  font-weight: bold;
+}
+
+.boardDate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  height: 25px;
+  padding: 5px;
+  border-bottom: 1px solid #999;
+  cursor: pointer;
+}
+
+.boardDate div {
+  margin-right: 40px;
+}
