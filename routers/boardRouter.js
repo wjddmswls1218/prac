@@ -6,20 +6,19 @@ const router = express.Router();
 
 router.get("/list", (req, res, next) => {
   const selectQuery = `
-  SELECT  A.id,
-          A.title,
-          B.name,
-          A.userId,
-          A.createdAt
-    FROM  boards        A
-   INNER
-    JOIN users          B
-      ON a.userId = B.id
-   ORDER BY A.createdAt DESC
+    SELECT  A.id,
+            A.title,
+            B.name,
+            A.userId,
+            A.createdAt
+      FROM    boards        A
+     INNER
+      JOIN users            B
+        ON a.userId = B.id
+     ORDER BY A.createdAt DESC
   `;
 
   const loggedIn = req.session.isLoggedIn;
-
   try {
     db.query(selectQuery, (err, rows) => {
       res.render("screens/board/list", { loggedIn, boardList: rows });

@@ -4,7 +4,6 @@ let agg2 = false;
 const btn = document.getElementById("signupBtn-js");
 const chk1 = document.getElementById("chk1-js");
 const chk2 = document.getElementById("chk2-js");
-
 const signupInit = () => {
   btn.style.pointerEvents = "none";
 };

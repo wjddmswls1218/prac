@@ -19,7 +19,7 @@ router.get("/signup", checkLogin, (req, res, next) => {
 router.post("/signup", (req, res, next) => {
   const insertQuery = `
   INSERT INTO users (
-    email,
+    emai"
     password,
     mobile,
     name,
@@ -81,6 +81,7 @@ router.post("/signin", (req, res, next) => {
 
       req.session.isLoggedIn = true;
       req.session.userId = rows[0].id;
+
       return res.redirect("/");
     });
   } catch (error) {
@@ -92,6 +93,7 @@ router.post("/signin", (req, res, next) => {
 router.get("/logout", (req, res, next) => {
   req.session.isLoggedIn = false;
   req.session.userId = null;
+
   return res.redirect("/");
 });
 
